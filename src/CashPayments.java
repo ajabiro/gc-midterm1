@@ -42,6 +42,12 @@ public class CashPayments extends Payments{
 		this.changeDue = changeDue;
 	}
 
+	@Override
+	protected void printReceipt() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 
 }

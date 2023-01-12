@@ -7,7 +7,7 @@ public abstract class Payments {
 	private double total;
 	
 	public abstract void pay();
-	
+
 	
 	//Constructor
 	public Payments(double subTotal, double taxRate, double total) {
@@ -47,8 +47,17 @@ public abstract class Payments {
 	public void setTotal(double total) {
 		this.total = total;
 	}
+
+
+	protected abstract void printReceipt();
+
+
+
 	
 
+
+
+	
 	//toString(?)
 	
 	
