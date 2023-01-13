@@ -2,9 +2,9 @@
 public abstract class Payments {
 
 	//Fields
-	private double subTotal;
-	private double taxRate = .06;
-	private double total;
+	protected double subTotal;
+	protected double taxRate = .06;
+	protected double total;
 	
 	public abstract void pay();
 
@@ -49,11 +49,15 @@ public abstract class Payments {
 	}
 
 
-	protected abstract void printReceipt();
+	//protected abstract void printReceipt();
 
 
 
-	
+	protected void printReceipt() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 
 
