@@ -17,7 +17,7 @@ public class POSApp {
 		Products prod = productList().get(userInput);
 		
 		
-		System.out.println("You chose menu number " + userIndex +  prod.getName()) ;
+		System.out.println("You chose menu number " + userIndex + " a " + prod.getName()) ;
 		
 		System.out.println("How many would you like to order?");
 		int orderAmount = scnr.nextInt();
@@ -52,7 +52,7 @@ public class POSApp {
 		}
 		
 		System.out.println("How would you like to pay?");
-		System.out.println("Cash, Check, or Check?");
+		System.out.println("Cash, Check, or Credit Card?");
 		
 	}while(continued.equalsIgnoreCase("y"));
 		
