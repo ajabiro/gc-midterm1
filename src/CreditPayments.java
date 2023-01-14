@@ -22,16 +22,14 @@ public class CreditPayments extends Payments{
 	
 	
 	/*Constructor*/
-	public CreditPayments(double subTotal, double taxRate, double total) {
-	super(subTotal, taxRate, total);
+	public CreditPayments(double subTotal, double total) {
+	super(subTotal, total);
 	this.creditCardNumber = creditCardNumber;
 	this.expirationDate = expirationDate;
 	this.cvv = cvv;
 	
 	}
-	
-	
-	
+
 	/*Pay method from Payment class*/
 	@Override
 	public void pay() {
@@ -122,9 +120,14 @@ public class CreditPayments extends Payments{
 			expirationDateMatcher = expireDateRegExPattern.matcher(expirationDate);
 
 		}
+		
+		System.out.println("");
+		printReceipt();
 	}
 	
+
 	
+			
 	/*Have to create a method that prints the receipt */
 	
 	public void printReceipt() {
@@ -138,8 +141,13 @@ public class CreditPayments extends Payments{
 		 *A substring is basically used to extract a part of a String 
 		 *String = timeless  substring = time or less both can
 		 *be extracted from a string */
-		System.out.printf("%12s%31.2f%n", "Credit Tend", total);
+		System.out.println(" Sweet Tooth \n 1234 Main St \n Detroit, MI 48000 \n 333-333-3333" );
+		System.out.println(" " );
+		System.out.println(" Terminal ID: ****27");
+		System.out.printf("%10s%33s%n", "Date", "2023-01-14");
+		System.out.printf("%10s%33s%n", "Credit", "Visa");
 		System.out.printf("%10s%33s%n", "Account #", "************" + (creditCardNumber.substring(creditCardNumber.length() - 4)));
+		System.out.printf("%10s%33s%n", "Total", total);
 		System.out.println("--------------------------------------------\n");
 		System.out.printf("%n%27s%n", "Thank You! " + nameInput);
 
@@ -215,5 +223,4 @@ public class CreditPayments extends Payments{
 
 	public void setCvv(String cvv) {
 		this.cvv = cvv;
-	}
-}
+	}}

@@ -1,8 +1,8 @@
 
 public class CryptoPayments extends Payments {
 
-	public CryptoPayments(double subTotal, double taxRate, double total) {
-		super(subTotal, taxRate, total);
+	public CryptoPayments(double subTotal, double total) {
+		super(subTotal, total);
 		// TODO Auto-generated constructor stub
 	}
 

@@ -1,19 +1,20 @@
+import java.util.ArrayList;
 
 public abstract class Payments {
 
 	//Fields
 	protected double subTotal;
-	protected double taxRate = .06;
+	protected double taxRate;
 	protected double total;
 	
 	public abstract void pay();
 
 	
 	//Constructor
-	public Payments(double subTotal, double taxRate, double total) {
+	public Payments(double subTotal, double total) {
 		super();
 		this.subTotal = subTotal;
-		this.taxRate = taxRate;
+		this.taxRate = 0.06;
 		this.total = total;
 	}
 
@@ -66,3 +67,6 @@ public abstract class Payments {
 	
 	
 }
+
+
+

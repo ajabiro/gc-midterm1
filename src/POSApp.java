@@ -18,9 +18,13 @@ public class POSApp {
 		
 		
 		System.out.println("You chose menu number " + userIndex + " a " + prod.getName()) ;
-		
+//		if((userInput < 0) && (userInput > 13 )) {
 		System.out.println("How many would you like to order?");
+//		}else {
+//			System.out.println("Sorry, that is not on the menu.");
+//		}
 		int orderAmount = scnr.nextInt();
+		//this is where we will subtract the menu amount
 		scnr.nextLine();
 		for (int i = 0; i < orderAmount; i++) {
 			
@@ -31,14 +35,12 @@ public class POSApp {
 		
 		System.out.println("Would you like to order anything else? (Y/N)");
 		continued = scnr.nextLine();
-		
+		double subTotal = 0;
+		double salesTax = 0;
+		double total = 0;
 		
 		if(continued.equalsIgnoreCase("n")) {
-		
-			double subTotal = 0;
-			double salesTax = 0;
-			double total = 0;
-			
+	
 			for(Products item : customerSelection) {
 				subTotal += item.getPrice();
 			
@@ -54,13 +56,29 @@ public class POSApp {
 		System.out.println("How would you like to pay?");
 		System.out.println("Cash, Check, or Credit Card?");
 		
+
+		String paymentOptions = scnr.next();
+		switch(paymentOptions.toLowerCase()) {
+			case "cash":
+				CashPayments dollar  = new CashPayments(subTotal, total); 
+				dollar.pay();
+				break;
+			case "check":
+				CheckPayments checkPay = new CheckPayments(subTotal,total);
+				checkPay.pay();
+			case "credit card":
+				CreditPayments cardPay = new CreditPayments(subTotal, total);
+				cardPay.pay();
+				break;
+		}
+		
 	}while(continued.equalsIgnoreCase("y"));
 		
 	}	
 	//ArrayList method that stores products
 		public static  ArrayList<Products> productList() {
 			ArrayList<Products> list = new ArrayList<>();
-			Products vGlazed = new Products(1, " Vernor's" , " Cake donut with Vernor's glaze", " Donuts ", 1.50, 50);
+			Products vGlazed = new Products(1, "Vernor's" , "Cake donut with Vernor's glaze", "Donuts ", 1.50, 50);
 			list.add(vGlazed);
 			Products cream = new Products(2, "Detroit Cream", "Our local take on the Boston cream ", "Donuts", 1.50, 50);
 			list.add(cream);
@@ -68,7 +86,7 @@ public class POSApp {
 			list.add(powdered);
 			Products blueberry = new Products(4, "Blueberry", "Cake donut with real blueberries", "Donuts", 1.50, 60);
 			list.add(blueberry);
-			Products birthdayCake = new Products(5, "Birthday Cake", "Cake donut with birthday sprinkles and frosting", "Speciality donuts", 1.60, 40);
+			Products birthdayCake = new Products(5, "Birthday Cake", "Cake donut with birthday sprinkles and frosting", "Donuts", 1.60, 40);
 			list.add(birthdayCake);
 			Products sCoffee = new Products(6, "Small Coffee", "Plain black coffee", "Beverages", 2.50, 100);
 			list.add(sCoffee);
@@ -96,7 +114,7 @@ public class POSApp {
 			//this below just prints the top part need to figure out how to line it up %?
 			System.out.println("\tCategory\tItem Name\tDescription\tPrice");
 			for(int i = 0; i < list.size(); i++) {
-				System.out.println(list.get(i).getMenuNumber() + ". "+ list.get(i).getCategory() + ": " + list.get(i).getName() + " - " + list.get(i).getDescription() + " $" + list.get(i).getPrice());
+				System.out.println(list.get(i).getMenuNumber() + ". "  + list.get(i).getCategory() + ": " + list.get(i).getName() + " - " + list.get(i).getDescription() + " $" + list.get(i).getPrice());
 		
 			}
 		}
