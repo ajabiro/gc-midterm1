@@ -5,11 +5,19 @@ import java.util.regex.Pattern;
 public class CheckPayments extends Payments {
 	
 	//fields
-	private int checkNumber;
+	private String checkNumber;
+	//constructor
 	public CheckPayments(double subTotal, double total) {
 		super(subTotal, total);
-	//this.checkNumber = checkNumber;
+	this.checkNumber = checkNumber;
 	
+	}
+	public String getCheckNumber() {
+		return checkNumber;
+	}
+
+	public void setCheckNumber(String checkNumber) {
+		this.checkNumber = checkNumber;
 	}
 
 	@Override
@@ -32,6 +40,7 @@ public class CheckPayments extends Payments {
 		}
 	}
 }
+
 	public void printReceipt() {
 		System.out.printf("%10s%33.2f%n", "Check Amt", getTotal());
 		System.out.printf("%7s%36.2f%n", "Change", 0.00);

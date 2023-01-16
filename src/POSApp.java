@@ -4,42 +4,54 @@ public class POSApp {
 
 	public static void main(String[] args) {
 		Scanner scnr = new Scanner(System.in);
-		String continued = ""; 
+		String continued = "";
+		double subTotal;
+		double salesTax;
+		double total = 0;
+		int userInput;
+		int userIndex;
+		
+		int orderAmount;
 		ArrayList<Products> customerSelection = new ArrayList<>();
 		
 		System.out.println("Hello, welcome to Sweet Tooth!");
 		System.out.println("Please review our menu below!");
+		
 		do {
+			
 		printList(productList());
 		System.out.println("Enter the menu number of the item wanted (1-13): ");
-		int userInput = scnr.nextInt()-1;
-		int userIndex = userInput +1;
+		userInput = scnr.nextInt()-1;
+		userIndex = userInput +1;
 		Products prod = productList().get(userInput);
 		
 		
 		System.out.println("You chose menu number " + userIndex + " a " + prod.getName()) ;
 //		if((userInput < 0) && (userInput > 13 )) {
 		System.out.println("How many would you like to order?");
-//		}else {
-//			System.out.println("Sorry, that is not on the menu.");
-//		}
-		int orderAmount = scnr.nextInt();
-		//this is where we will subtract the menu amount
+		orderAmount = scnr.nextInt();
 		scnr.nextLine();
+		
+		
 		for (int i = 0; i < orderAmount; i++) {
+			int inventory=prod.getAmountOfProduct()-1;
 			
 			customerSelection.add( prod);
+			prod.setAmountOfProduct(inventory);
+		System.out.println("Remaining amount of " + prod.getName() +" " +  inventory);
+		
 		}
 		
 		System.out.println("The current subtotal is: " + "$" + orderAmount * prod.getPrice());
 		
 		System.out.println("Would you like to order anything else? (Y/N)");
 		continued = scnr.nextLine();
-		double subTotal = 0;
-		double salesTax = 0;
-		double total = 0;
+		 subTotal = 0;
+		salesTax = 0;
+		total = 0;
 		
 		if(continued.equalsIgnoreCase("n")) {
+			
 	
 			for(Products item : customerSelection) {
 				subTotal += item.getPrice();
@@ -51,7 +63,8 @@ public class POSApp {
 			System.out.println("Your subtotal is: " + subTotal);
 			System.out.println("Sales Tax: " + salesTax);
 			System.out.println("Total: " + total);
-		}
+		} 
+		
 		
 		System.out.println("How would you like to pay?");
 		System.out.println("Cash, Check, or Credit Card?");
@@ -66,7 +79,7 @@ public class POSApp {
 			case "check":
 				CheckPayments checkPay = new CheckPayments(subTotal,total);
 				checkPay.pay();
-			case "credit card":
+			case "creditcard":
 				CreditPayments cardPay = new CreditPayments(subTotal, total);
 				cardPay.pay();
 				break;
@@ -108,10 +121,8 @@ public class POSApp {
 			return list;
 		}
 		//this is where we format the list to make it look nice
-		// make it look like a menu put $
-		// can also do it in the To-String section up to you
 		public static void printList(ArrayList<Products> list) {
-			//this below just prints the top part need to figure out how to line it up %?
+			
 			System.out.println("\tCategory\tItem Name\tDescription\tPrice");
 			for(int i = 0; i < list.size(); i++) {
 				System.out.println(list.get(i).getMenuNumber() + ". "  + list.get(i).getCategory() + ": " + list.get(i).getName() + " - " + list.get(i).getDescription() + " $" + list.get(i).getPrice());
