@@ -1,0 +1,14 @@
+In simple terms, Big O notation is a language used for describing how long an algorithm takes to run. 
+
+There isn't anything in our codebase with recursive calculations that grows with every iteration. 
+
+For instance, there are algorithms that can double with every iteration. 
+
+	int fibonacci(int num)
+	{
+    	if (num <= 1) return num;
+    	return fibonacci(num - 2) + fibonacci(num - 1);
+	}
+	
+Our algorithms are based on simple mathematical calculations and inputs such as calculating 
+currency, and discounts.   	

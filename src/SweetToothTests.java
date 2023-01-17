@@ -8,7 +8,7 @@ class SweetToothTests {
 		@Test
 		void testProductNull() {
 			
-			Products p = new Products(1, "Vernor's Glazed", "Glaze", "Galzed Donuts", 1.50, 500);
+			Products p = new Products(1, "Vernors Glazed", "Glaze", "Glazed Donuts", 1.50, 500);
 			assertNotNull(p);
 			
 		}
@@ -17,7 +17,7 @@ class SweetToothTests {
 		@Test
 		void testProductMenuNumber() {
 			
-			Products p = new Products(1, "Vernor's Glazed", "Glaze", "Galzed Donuts", 1.50, 500);
+			Products p = new Products(1, "Vernors Glazed", "Glaze", "Glazed Donuts", 1.50, 500);
 			assertEquals(p.getMenuNumber(), 1);
 			
 		}
@@ -26,8 +26,8 @@ class SweetToothTests {
 		@Test
 		void testProductName() {
 			
-			Products p = new Products(1, "Vernor's Glazed", "Glaze", "Galzed Donuts", 1.50, 500);
-			assertEquals(p.getName(), "Vernor's Glazed");
+			Products p = new Products(1, "Vernor Glazed", "Glaze", "Glazed Donuts", 1.50, 500);
+			assertEquals(p.getName(), "Vernor Glazed");
 			
 		}
 		
@@ -35,8 +35,8 @@ class SweetToothTests {
 		@Test
 		void testProductCategory() {
 			
-			Products p = new Products(1, "Vernor's Glazed", "Glaze", "Galzed Donuts", 1.50, 500);
-			assertEquals(p.getCategory(), "Galzed Donuts");
+			Products p = new Products(1, "Vernors Glazed", "Glaze", "Glazed Donuts", 1.50, 500);
+			assertEquals(p.getCategory(), "Glazed Donuts");
 			
 		}
 		
@@ -44,7 +44,7 @@ class SweetToothTests {
 		@Test
 		void testProductDescription() {
 			
-			Products p = new Products(1, "Vernor's Glazed", "Glaze", "Galzed Donuts", 1.50, 500);
+			Products p = new Products(1, "Vernors Glazed", "Glaze", "Glazed Donuts", 1.50, 500);
 			assertEquals(p.getDescription(), "Glaze");
 			
 		}
@@ -53,7 +53,7 @@ class SweetToothTests {
 		@Test
 		void testProductPrice() {
 			
-			Products p = new Products(1, "Vernor's Glazed", "Glaze", "Galzed Donuts", 1.50, 500);
+			Products p = new Products(1, "Vernors Glazed", "Glaze", "Glazed Donuts", 1.50, 500);
 			assertEquals(p.getPrice(), 1.50);
 			
 		}
@@ -62,7 +62,7 @@ class SweetToothTests {
 		@Test
 		void testProductAmount() {
 			
-			Products p = new Products(1, "Vernor's Glazed", "Glaze", "Galzed Donuts", 1.50, 500);
+			Products p = new Products(1, "Vernors Glazed", "Glaze", "Glazed Donuts", 1.50, 500);
 			assertEquals(p.getAmountOfProduct(), 500);
 			
 		}

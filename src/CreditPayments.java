@@ -97,7 +97,7 @@ public class CreditPayments extends Payments{
 		
 		
 		/*Expiration date input*/
-		System.out.println("Please enter Expiration Date MM/YY: ");
+		System.out.println("Please enter Expiration Date YYYY/MM/DD: ");
 		expirationDate = scan.nextLine();
 		
 		/*Regex validation for expiration date
@@ -144,7 +144,7 @@ public class CreditPayments extends Payments{
 		System.out.println(" Sweet Tooth \n 1234 Main St \n Detroit, MI 48000 \n 333-333-3333" );
 		System.out.println(" " );
 		System.out.println(" Terminal ID: ****27");
-		System.out.printf("%10s%33s%n", "Date", "2023-01-14");
+		System.out.printf("%10s%33s%n", "Date", "2023-01-18");
 		System.out.printf("%10s%33s%n", "Credit", "Visa");
 		System.out.printf("%10s%33s%n", "Account #", "************" + (creditCardNumber.substring(creditCardNumber.length() - 4)));
 		System.out.printf("%10s%33s%n", "Total", total);

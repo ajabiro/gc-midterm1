@@ -1,6 +1,0 @@
-Create a loop so that if the user enters thats out of stock it will tell them (loop to keep track out product amount)
-Which payment the user is paying with and printing a final receipt -print off what they ordered & how many
-Unit Tests
-If the user enters in a wrong value or number greater than 13 (Try Catch)
-Extra - Day old donut discount
-

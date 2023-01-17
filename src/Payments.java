@@ -50,21 +50,11 @@ public abstract class Payments {
 	}
 
 
-	//protected abstract void printReceipt();
-
-
-
 	protected void printReceipt() {
-		// TODO Auto-generated method stub
+	
 		
 	}
 
-
-
-
-	
-	//toString(?)
-	
 	
 }
 

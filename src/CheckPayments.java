@@ -6,18 +6,10 @@ public class CheckPayments extends Payments {
 	
 	//fields
 	private String checkNumber;
-	//constructor
 	public CheckPayments(double subTotal, double total) {
 		super(subTotal, total);
-	this.checkNumber = checkNumber;
+	//this.checkNumber = checkNumber;
 	
-	}
-	public String getCheckNumber() {
-		return checkNumber;
-	}
-
-	public void setCheckNumber(String checkNumber) {
-		this.checkNumber = checkNumber;
 	}
 
 	@Override
@@ -25,11 +17,12 @@ public class CheckPayments extends Payments {
 	
 		while(true) {
 		
-		System.out.println("Please enter your check number: ");
 		Scanner scnr = new Scanner(System.in);
+		System.out.println("Please enter your check number: ");
+		 checkNumber = scnr.nextLine();
 		
-		String checkNumber = "Check Number";
-		Matcher pattern = Pattern.compile("(\\d{4})").matcher(checkNumber);
+		//String checkNumber = "Check Number";
+		Matcher pattern = Pattern.compile("\\d\\d\\d\\d").matcher(checkNumber);
 		
 		if (pattern.matches()) {
 			printReceipt();
@@ -45,9 +38,7 @@ public class CheckPayments extends Payments {
 		System.out.printf("%10s%33.2f%n", "Check Amt", getTotal());
 		System.out.printf("%7s%36.2f%n", "Change", 0.00);
 		System.out.println("--------------------------------------------\n");
-		System.out.printf("%n%27s%n", "Thank You!");
-
+	//	System.out.printf("%n%27s%n", "Thank You!");
 	}
-
 	
 }

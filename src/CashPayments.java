@@ -48,7 +48,7 @@ public class CashPayments extends Payments{
 			System.out.printf("%7s%36.2f%n", "Total", getTotal());
 			System.out.printf("%7s%36.2f%n", "Change", changeBack(amountTender));
 			System.out.println("--------------------------------------------\n");
-			System.out.printf("%n%27s%n", "Thank You!");
+//			System.out.printf("%n%27s%n", "Thank You!");
 			
 		}
 
