@@ -2,6 +2,7 @@ import java.util.*;
 
 public class POSApp {
 
+
 	public static void main(String[] args) {
 		Scanner scnr = new Scanner(System.in);
 		String continued = "";
@@ -82,9 +83,7 @@ public class POSApp {
 	
 			for(Products item : customerSelection) {
 				subTotal += item.getPrice();
-		//		for (int i = 0; i < userIndex; i++) {
-		//			customerSelection.add(prod.get(userInput-1));
-		
+	
 			salesTax = subTotal * .06;
 			total = salesTax + subTotal;
 			}
@@ -125,11 +124,6 @@ public class POSApp {
 	
 	}	
 
-//	private static ArrayList<Products> customerSelection() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-
 	// visa card Visa 4155279860457
 	
 	public static void receipt(double total, double subTotal, String paymentOptions, ArrayList<Products> prod) {
@@ -138,18 +132,10 @@ public class POSApp {
 		System.out.println(" ");
 		System.out.println("Terminal ID: ****27");
 		System.out.printf("%10s%33s%n", "Date", "2023-01-18");
-//		System.out.println("Items ordered: " + "\n" + prod);
-//		System.out.println("\nPayment Method: " + paymentOptions);
-//		System.out.printf("Subtotal: $%.2f", subTotal);
-//		System.out.printf("\n" + "Total: $%.2f", total);
 		System.out.println(" ");
 		System.out.printf("%-15s %s \n", "Item", "Price");
 	    System.out.println("========================");
-	   
-	    
-		//	for (int i = 0; i < prod.getMenuNumber(); i ++) {
-	  	   
-	 //    System.out.printf("%-15s $%.2f \n", prod.getName(), prod.getPrice());
+	
 	  		ArrayList<Products> customerSelection = prod;
 			for (int i = 0; i < customerSelection.size(); i ++) {
 	  	   
@@ -164,8 +150,6 @@ public class POSApp {
 			System.out.println("Thank you for your business!");
 	}
 
-//	}
-//}
 	//ArrayList method that stores products
 		public static  ArrayList<Products> productList() {
 			ArrayList<Products> list = new ArrayList<>();
@@ -202,18 +186,11 @@ public class POSApp {
 			System.out.println(" ");
 			System.out.printf("%-15s %-11s %-16s %-51s  %s\n","Menu Number", "Category",  "Name", " Description", "Price");
 			for(int i = 0; i < list.size(); i++) {
-				//System.out.println(list.get(i).getMenuNumber() + ". "  + list.get(i).getCategory() + ": " + list.get(i).getName() + " - " + list.get(i).getDescription() + " $" + list.get(i).getPrice());
-				
 				System.out.printf("%-15s %-11s %-17s %-50s  $%-5.2f\n", list.get(i).getMenuNumber() ,   list.get(i).getCategory() , list.get(i).getName(), list.get(i).getDescription(), list.get(i).getPrice());
 			}
-//		}
-//			public static ArrayList printCustomerList(ArrayList customerList) {
-//				return customerList;
+			
 		}
 		
-		
-			
-	
-		
+
 		
 }
