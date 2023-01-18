@@ -38,7 +38,7 @@ public class CheckPayments extends Payments {
 		System.out.printf("%10s%33.2f%n", "Check Amt", getTotal());
 		System.out.printf("%7s%36.2f%n", "Change", 0.00);
 		System.out.println("--------------------------------------------\n");
-	//	System.out.printf("%n%27s%n", "Thank You!");
+		System.out.printf("%n%27s%n", "Thank You!");
 	}
 	
 }

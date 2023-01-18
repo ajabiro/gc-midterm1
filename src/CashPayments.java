@@ -44,8 +44,8 @@ public class CashPayments extends Payments{
 
 		@Override
 		protected void printReceipt() {
-			System.out.printf("%10s%33.2f%n", "Cash Amt", amountTender);
 			System.out.printf("%7s%36.2f%n", "Total", getTotal());
+			System.out.printf("%10s%33.2f%n", "Cash Amt", amountTender);
 			System.out.printf("%7s%36.2f%n", "Change", changeBack(amountTender));
 			System.out.println("--------------------------------------------\n");
 //			System.out.printf("%n%27s%n", "Thank You!");

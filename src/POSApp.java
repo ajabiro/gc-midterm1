@@ -82,11 +82,13 @@ public class POSApp {
 	
 			for(Products item : customerSelection) {
 				subTotal += item.getPrice();
-			
+		//		for (int i = 0; i < userIndex; i++) {
+		//			customerSelection.add(prod.get(userInput-1));
+		
 			salesTax = subTotal * .06;
 			total = salesTax + subTotal;
 			}
-			
+		
 			
 			System.out.println("Your subtotal is: " + Math.round(subTotal * 100)/100.0);
 			System.out.println("Sales Tax: " + Math.round(salesTax * 100)/100.0);
@@ -118,7 +120,7 @@ public class POSApp {
 	//			coin.pay();
 	//			break;
 		}
-		receipt(total, subTotal, paymentOptions, prod );
+		receipt(total, subTotal, paymentOptions, customerSelection);
 	  }while(continued.equalsIgnoreCase("y"));
 	
 	}	
@@ -130,30 +132,39 @@ public class POSApp {
 
 	// visa card Visa 4155279860457
 	
-	public static void receipt(double total, double subTotal, String paymentOptions, Products prod) {
-		System.out.println("Thank you for your business!");
+	public static void receipt(double total, double subTotal, String paymentOptions, ArrayList<Products> prod) {
+		System.out.println(" Sweet Tooth \n 1234 Main St \n Detroit, MI 48000 \n 333-333-3333" );
+		
 		System.out.println(" ");
 		System.out.println("Terminal ID: ****27");
 		System.out.printf("%10s%33s%n", "Date", "2023-01-18");
+//		System.out.println("Items ordered: " + "\n" + prod);
+//		System.out.println("\nPayment Method: " + paymentOptions);
+//		System.out.printf("Subtotal: $%.2f", subTotal);
+//		System.out.printf("\n" + "Total: $%.2f", total);
 		System.out.println(" ");
-	//	System.out.println("Items ordered: " + "\n" + prod);
-		System.out.println("\nPayment Method: " + paymentOptions);
-		System.out.printf("Subtotal: $%.2f", subTotal);
-		System.out.printf("\n" + "Total: $%.2f", total);
 		System.out.printf("%-15s %s \n", "Item", "Price");
-	    System.out.println("=================================");
+	    System.out.println("========================");
+	   
 	    
-			for (int i = 0; i < prod.getMenuNumber(); i ++) {
+		//	for (int i = 0; i < prod.getMenuNumber(); i ++) {
 	  	   
-	     System.out.printf("%-15s $%.2f \n", prod.getName(), prod.getPrice());
-	//  		ArrayList<Products> customerSelection = null;
-	//		for (int i = 0; i < customerSelection.size(); i ++) {
+	 //    System.out.printf("%-15s $%.2f \n", prod.getName(), prod.getPrice());
+	  		ArrayList<Products> customerSelection = prod;
+			for (int i = 0; i < customerSelection.size(); i ++) {
 	  	   
-	//  	       System.out.printf("%-15s $%.2f \n", customerSelection.get(i).getName(), customerSelection.get(i).getPrice());
+	  	       System.out.printf("%-15s $%.2f \n", customerSelection.get(i).getName(), customerSelection.get(i).getPrice());
 	  		
 		System.out.println("~~~~~~~~~~~~");
 			}
+			System.out.println("\nPayment Method: " + paymentOptions);
+			System.out.printf("Subtotal: $%.2f", subTotal);
+			System.out.printf("\n" + "Total: $%.2f", total);
+			System.out.println(" ");
+			System.out.println("Thank you for your business!");
 	}
+
+//	}
 //}
 	//ArrayList method that stores products
 		public static  ArrayList<Products> productList() {

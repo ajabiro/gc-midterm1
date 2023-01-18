@@ -80,6 +80,11 @@ public class Products {
 
 		
 	}
+
+	public Products get(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 

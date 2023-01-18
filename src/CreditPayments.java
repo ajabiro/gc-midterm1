@@ -75,7 +75,7 @@ public class CreditPayments extends Payments{
 		
 		
 		/*cvv input*/
-		System.out.println("Please enter your secure code (The three digits on the back of your card):");
+		System.out.println("Please enter your security code (The three digits on the back of your card):");
 		cvv = scan.nextLine();
 		
 		/*^ represents the starting of the string. 
@@ -187,10 +187,6 @@ public class CreditPayments extends Payments{
 		
 		
 		return null;
-		
-
-		
-		
 	}
 	
 	/*Visa : 13 or 16 digits, starting with 4.*/
