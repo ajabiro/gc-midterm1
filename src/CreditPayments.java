@@ -130,28 +130,28 @@ public class CreditPayments extends Payments{
 			
 	/*Have to create a method that prints the receipt */
 	
-	public void printReceipt() {
-		/*An abstract method was created in the parent class*/
-		super.printReceipt();
-		
-		/*%12 is for 12 spaces
-		 * s is for String
-		 * %f is floating point
-		 * %n is for new line
-		 *A substring is basically used to extract a part of a String 
-		 *String = timeless  substring = time or less both can
-		 *be extracted from a string */
-		System.out.println(" Sweet Tooth \n 1234 Main St \n Detroit, MI 48000 \n 333-333-3333" );
-		System.out.println(" " );
-		System.out.println(" Terminal ID: ****27");
-		System.out.printf("%10s%33s%n", "Date", "2023-01-18");
-		System.out.printf("%10s%33s%n", "Credit", "Visa");
-		System.out.printf("%10s%33s%n", "Account #", "************" + (creditCardNumber.substring(creditCardNumber.length() - 4)));
-		System.out.printf("%10s%33s%n", "Total", total);
-		System.out.println("--------------------------------------------\n");
-		System.out.printf("%n%27s%n", "Thank You! " + nameInput);
-
-	}
+//	public void printReceipt() {
+//		/*An abstract method was created in the parent class*/
+//		super.printReceipt();
+//		
+//		/*%12 is for 12 spaces
+//		 * s is for String
+//		 * %f is floating point
+//		 * %n is for new line
+//		 *A substring is basically used to extract a part of a String 
+//		 *String = timeless  substring = time or less both can
+//		 *be extracted from a string */
+//		System.out.println(" Sweet Tooth \n 1234 Main St \n Detroit, MI 48000 \n 333-333-3333" );
+//		System.out.println(" " );
+//		System.out.println(" Terminal ID: ****27");
+//		System.out.printf("%10s%33s%n", "Date", "2023-01-18");
+//		System.out.printf("%10s%33s%n", "Credit", "Visa");
+//		System.out.printf("%10s%33s%n", "Account #", "************" + (creditCardNumber.substring(creditCardNumber.length() - 4)));
+//		System.out.printf("%10s%33s%n", "Total", total);
+//		System.out.println("--------------------------------------------\n");
+//		System.out.printf("%n%27s%n", "Thank You! " + nameInput);
+//
+//	}
 	
 	
 	

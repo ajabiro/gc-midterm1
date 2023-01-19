@@ -161,7 +161,7 @@ public class POSApp {
 			list.add(powdered);
 			Products blueberry = new Products(4, "Blueberry", "Cake donut with real blueberries ", "Donuts", 1.50, 60);
 			list.add(blueberry);
-			Products birthdayCake = new Products(5, "Birthday Cake", "Cake donut with birthday sprinkles and frosting ", "Donuts", 1.60, 40);
+			Products birthdayCake = new Products(5, "Birthday Cake", "Cake donut with birthday sprinkles and frosting ", "Donuts", 1.50, 40);
 			list.add(birthdayCake);
 			Products sCoffee = new Products(6, "Small Coffee", "Plain black coffee ", "Beverages", 2.50, 100);
 			list.add(sCoffee);
